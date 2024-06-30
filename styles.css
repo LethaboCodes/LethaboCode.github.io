@@ -1,0 +1,242 @@
+:root {
+    --c-bg: hsl(0, 0%, 5%);
+    --c-text: hsl(0, 0%, 95%);
+    --vw: 8.53px;
+    --vh: 12.8px;
+    --vmax: 12.8px;
+    --vmin: 8.53px;
+    
+}
+
+:root {
+    --c-bg: hsl(0, 0%, 90%);
+    --c-text: hsl(0, 0%, 10%);
+    --pad: max(20px, 4vmin);
+    --fs-text: 12px;
+}
+
+:root {
+    view-transition-name: root;
+}
+
+html {
+    line-height: 1;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html, body {
+    height: 100%;
+    display: block;
+}
+
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 100;
+    font-size: var(--fs-text);
+    font-feature-settings: "palt";
+    text-size-adjust: none;
+    overscroll-behavior: none;
+    overflow: hidden;
+    white-space: nowrap;
+    transition-property: background-color;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+    padding: 0;
+    margin: 0;
+    display: block;
+    unicode-bidi: isolate;
+}
+
+Background {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    z-index: 1;
+    left: var(--pad);
+    right: var(--pad);
+    top: var(--pad);
+    bottom: var(--pad);
+    pointer-events: none;
+    overflow: hidden;
+    display: block;
+    unicode-bidi: isolate;
+}
+
+/*
+element.style {
+    width: 531.766px;
+    height: 689.766px;
+}
+
+main, canvas {
+    display: block;
+}
+
+canvas {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+*/
+
+.frame {
+    position: fixed;
+    z-index: 10;
+    left: var(--pad);
+    right: var(--pad);
+    top: var(--pad);
+    bottom: var(--pad);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.frame_line {
+    position: absolute;
+    background-color: #fff;
+    opacity: .5;
+}
+
+.frame_line-left {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+}
+
+.frame_line-right {
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+}
+
+.frame_line-top {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+}
+
+.frame_line-bottom {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+}
+
+.site_header {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    z-index: 10;
+    left: calc(var(--pad)* 2);
+    top: calc(var(--pad)* 2);
+    mix-blend-mode: difference;
+}
+
+header {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.site_header_title {
+    margin: 0;
+    padding: 0;
+    margin: -0.1em 0 0 -0.04em;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.site_header_label {
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    font-weight: 100;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.site_header_nav {
+    margin-top: 50px;
+}
+
+nav {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.siteHeader_nav ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    unicode-bidi: isolate;
+}
+
+/* Styling for the links */
+.site_header_nav ul li a {
+    position: relative;
+    color: #ffffff; /* White color */
+    text-decoration: none; /* Remove underline */
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    font-size: 0.6rem; /* Adjust font size */
+    font-weight: 300;
+    padding: 0.5rem 1rem; /* Padding for better clickable area */
+    transition: color 0.3s ease; /* Smooth transition for color change on hover */
+    padding: 0;
+    margin: 0;
+}
+
+/* Hover effect for links */
+.site_header_nav ul li a:hover {
+    color: #dddddd; /* Slightly darker white on hover */
+}
