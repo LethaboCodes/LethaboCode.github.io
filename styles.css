@@ -222,18 +222,19 @@ ul {
     unicode-bidi: isolate;
 }
 
+.site_header_nav ul li {
+    padding-top: 0.5rem; /* Space between the links vertically */
+}
+
 /* Styling for the links */
 .site_header_nav ul li a {
     position: relative;
-    color: #ffffff; /* White color */
+    color: #c9c8c8; /* White color */
     text-decoration: none; /* Remove underline */
     font-family: 'Roboto', sans-serif; /* Use Roboto font */
     font-size: 0.6rem; /* Adjust font size */
-    font-weight: 300;
-    padding: 0.5rem 1rem; /* Padding for better clickable area */
+    font-weight: 700;
     transition: color 0.3s ease; /* Smooth transition for color change on hover */
-    padding: 0;
-    margin: 0;
 }
 
 /* Hover effect for links */
