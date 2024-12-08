@@ -1,243 +1,349 @@
-:root {
-    --c-bg: hsl(0, 0%, 5%);
-    --c-text: hsl(0, 0%, 95%);
-    --vw: 8.53px;
-    --vh: 12.8px;
-    --vmax: 12.8px;
-    --vmin: 8.53px;
-    
-}
-
-:root {
-    --c-bg: hsl(0, 0%, 90%);
-    --c-text: hsl(0, 0%, 10%);
-    --pad: max(20px, 4vmin);
-    --fs-text: 12px;
-}
-
-:root {
-    view-transition-name: root;
-}
-
-html {
-    line-height: 1;
-    box-sizing: border-box;
-    user-select: none;
-}
-
-html, body {
-    height: 100%;
-    display: block;
-}
-
 body {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    color: white;
-    font-family: 'Roboto';
-    font-weight: 100;
-    font-size: var(--fs-text);
-    font-feature-settings: "palt";
-    text-size-adjust: none;
-    overscroll-behavior: none;
-    overflow: hidden;
-    white-space: nowrap;
-    transition-property: background-color;
-    transition-duration: 2s;
-    transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-    padding: 0;
-    margin: 0;
-    display: block;
-    unicode-bidi: isolate;
-}
-
-Background {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400; /* Adjust to match the weight you'd like to use */
     margin: 0;
     padding: 0;
-    position: fixed;
-    z-index: 1;
-    left: var(--pad);
-    right: var(--pad);
-    top: var(--pad);
-    bottom: var(--pad);
-    pointer-events: none;
-    overflow: hidden;
-    display: block;
-    unicode-bidi: isolate;
-}
-
-/*
-element.style {
-    width: 531.766px;
-    height: 689.766px;
-}
-
-main, canvas {
-    display: block;
-}
-
-canvas {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
-*/
-
-.frame {
-    position: fixed;
-    z-index: 10;
-    left: var(--pad);
-    right: var(--pad);
-    top: var(--pad);
-    bottom: var(--pad);
-    mix-blend-mode: difference;
-    pointer-events: none;
-    display: block;
-    unicode-bidi: isolate;
-}
-
-.frame_line {
-    position: absolute;
-    background-color: #fff;
-    opacity: .5;
-}
-
-.frame_line-left {
-    margin: 0;
-    padding: 0;
-    left: 0;
-    top: 0;
-    width: 1px;
-    height: 100%;
-}
-
-.frame_line-right {
-    margin: 0;
-    padding: 0;
-    right: 0;
-    top: 0;
-    width: 1px;
-    height: 100%;
-}
-
-.frame_line-top {
-    margin: 0;
-    padding: 0;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 1px;
-}
-
-.frame_line-bottom {
-    margin: 0;
-    padding: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-}
-
-.site_header {
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    z-index: 10;
-    left: calc(var(--pad)* 2);
-    top: calc(var(--pad)* 2);
-    mix-blend-mode: difference;
+    line-height: 1.5;
+    color: #333;
 }
 
 header {
-    display: block;
-    unicode-bidi: isolate;
+    display: flex;
+    align-items:center; /* Vertically align items */
+    justify-content:space-between; /* Push items to edges of the header */
+    width: 100vw; /* Full screen width */
+    height: 90vh; /* Full screen height */
+    box-sizing: border-box; /* Include padding in width/height */
+    background-color: #f0f0f0; /* Light background color */
 }
 
-.site_header_title {
+header h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600; /* Use a weight available in the font */
+    font-size: 13vw; /* Large title font size */
     margin: 0;
-    padding: 0;
-    margin: -0.1em 0 0 -0.04em;
-    font-weight: 200;
-    font-size: 30px;
+    color: #000000; /* Dark text color */
+    margin-left: 10px;
+    line-height: 1;
 }
 
-h1 {
-    display: block;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
-}
-
-.site_header_label {
+header p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400; /* Use a weight available in the font */
+    font-size: 3vw; /* Subtitle font size */
     margin: 0;
-    padding: 0;
-    margin-top: 5px;
-    font-weight: 100;
+    color: #333; /* Gray text color */
+    margin-left: 25px;
 }
 
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-}
-
-.site_header_nav {
-    margin-top: 50px;
+header .profile-image {
+    align-self: self-end;
+    max-width: 50%; /* Scale the image to fit */
+    height: auto; /* Maintain aspect ratio */
 }
 
 nav {
-    display: block;
-    unicode-bidi: isolate;
-}
-
-.siteHeader_nav ul {
+    position: sticky;
+    top: 0; /* Stick to the top of the page */
+    z-index: 1000; /* Ensure it stays above other elements */
+    background-color: #000000;
     display: flex;
-    flex-direction: column;
-    row-gap: 15px;
+    align-items:center; /* Vertically align items */
+    justify-content:space-between; /* Push items to edges of the header */
+    text-align: center;
+    height: 6vh; /* Full screen height */
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
-ul {
-    list-style: none;
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 1rem;
 }
 
-ul {
-    padding: 0;
-    margin: 0;
+nav a:hover {
+    text-decoration: underline;
+}
+
+#about {
+    background-color: rgb(0, 0, 0);
+    padding-top: 25px;
+    align-items:center; /* Vertically align items */
+    width: 100vw; /* Full screen width */
+    height: 75vh; /* Full screen height */
+}
+
+#about #nodiv {
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
-    unicode-bidi: isolate;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.site_header_nav ul li {
-    padding-top: 0.5rem; /* Space between the links vertically */
+
+#about div {
+    display: flex;
+    align-items:center; /* Vertically align items */
+    justify-content:space-between; /* Push items to edges of the header */
 }
 
-/* Styling for the links */
-.site_header_nav ul li a {
+#abourt div div {
+    display:block;
+    align-items:center; /* Vertically align items */
+    justify-content:space-between; /* Push items to edges of the header */
+}
+
+#about p {
+    color: #ffffff;
+    padding: 20px;
+}
+
+#about h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 100; /* Use a weight available in the font */
+    margin-top: 0;
+    padding-top: 1rem;
+    padding: 1rem;
+    font-size:  3vw;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+#about #who {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400; /* Use a weight available in the font */
+    padding-top: 0;
+    font-size: 14vw;
+}
+
+/* Education Section */
+#education {
     position: relative;
-    color: #c9c8c8; /* White color */
-    text-decoration: none; /* Remove underline */
-    font-family: 'Roboto', sans-serif; /* Use Roboto font */
-    font-size: 0.6rem; /* Adjust font size */
-    font-weight: 700;
-    transition: color 0.3s ease; /* Smooth transition for color change on hover */
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items:start;
+    justify-content: center;
+    min-height: 25vh;
+    padding-bottom: 200px;
 }
 
-/* Hover effect for links */
-.site_header_nav ul li a:hover {
-    color: #dddddd; /* Slightly darker white on hover */
+/* Education items - Horizontal layout */
+.education-items {
+    position: absolute;
+    bottom: 10%; /* Adjust position above the bottom */
+    z-index: 1;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 1rem; /* Space between each item */
+    text-align: center;
+}
+
+/* Styling for the individual education items */
+.education-items p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* Backdrop text */
+#education .backdrop-text {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1); /* Very light text color */
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+
+#skills #backdrop-text {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600; /* Use a weight available in the font */
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1); /* Soft transparent white */
+    white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.skills-grid {
+    margin-top: 35vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    position: relative;
+    z-index: 2; /* Above backdrop */
+}
+
+.skill {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+}
+
+.skill h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.skill p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+/* Backdrop text styling */
+.backdrop-text {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600; /* Use a weight available in the font */
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1); /* Lightly visible text */
+    z-index: 0; /* Place it behind the projects */
+    white-space: nowrap;
+}
+
+/* Projects container styling */
+.projects {
+    display: flex;
+    gap: 20px; /* Space between projects */
+    overflow-x: auto; /* Horizontal scroll */
+    padding: 20px;
+    z-index: 1; /* Place it above the backdrop text */
+    position: relative;
+    top: 20%;
+}
+
+/* Individual project card styling */
+.project {
+    flex: 0 0 300px; /* Fixed width for each card */
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+    transform: scale(1.005); /* Slight zoom on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure the section takes up full width */
+#projects {
+    position: relative; 
+    background-color: #000000; 
+    overflow: hidden; 
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+    width: 100vw; /* Full screen width */
+    height: 100vh;
+}
+
+/* Smooth scrolling for horizontal scroll */
+.projects::-webkit-scrollbar {
+    height: 8px;
+}
+
+.projects::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+
+/* Contact Section */
+#contact {
+    position: relative;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0; /* Vertical padding for spacing */
+    overflow: hidden; /* Hide overflow from large backdrop text */
+    display: flex;
+    align-items:end;
+    justify-content: center;
+    min-height: 30vh; /* Full viewport height */
+}
+
+/* Contact items - Horizontal layout */
+.contact-items {
+    top: 80%;
+    position: absolute; /* To layer over the backdrop text */
+    align-items: end;
+    z-index: 1; /* Ensure it's above the backdrop text */
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 8vw; /* Add space between items */
+}
+
+/* Styling for the individual contact items */
+.contact-items p,
+.contact-items a {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contact-items a:hover {
+    text-decoration: underline; /* Add underline effect on hover */
+}
+
+/* Backdrop text */
+#contact .backdrop-text {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600; /* Use a weight available in the font */
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1); /* Very light text color */
+    white-space: nowrap;
+    pointer-events: none; /* Ensure it doesn’t interfere with interaction */
+}
+
+footer {
+    font-size: 1em;
+    text-align:center;
+    background: #000000;
+    color: white;
+    margin: 0;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px;
 }
